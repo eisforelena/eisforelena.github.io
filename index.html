@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://your_repository_path/dist/three-geo.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas });
+
+        // Configura ThreeGeo qui
+        const tgeo = new ThreeGeo({
+            tokenMapbox: 'YOUR_MAPBOX_TOKEN', // Inserisci il tuo token Mapbox
+        });
+
+        async function init() {
+            const terrain = await tgeo.getTerrainRgb([46.5763, 7.9904], 5.0, 12);
+            scene.add(terrain);
+            camera.position.z = 5;
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        init();
+    </script>
+</body>
+</html>
