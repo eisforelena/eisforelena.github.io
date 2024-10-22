@@ -11,15 +11,6 @@
 [actions-badge]: https://github.com/w3reality/three-geo/workflows/CI/badge.svg
 [actions-url]: https://github.com/w3reality/three-geo/actions
 
-**three-geo** is a [three.js](https://github.com/mrdoob/three.js) based geographic visualization library. Using three-geo, we can easily build satellite-textured 3D terrain models in near real-time by simply specifying GPS coordinates anywhere on the globe. The geometry of the terrain is based on the RGB-encoded DEM (Digital Elevation Model) provided by the Mapbox Maps API.
-
-The terrain is represented by standard [THREE.Mesh](https://threejs.org/docs/#api/en/objects/Mesh) objects. This makes it easy for us to access underlying geometry/texture array and perform original GIS (Geographic Information System) experiments in JavaScript. (See Usage for how to programatically obtain those mesh objects).
-
-Credits: this library has been made possible thanks to
-
-- geo-related libraries ([mapbox](https://github.com/mapbox), [Turfjs](https://github.com/Turfjs/turf)) and [the Mapbox Maps API](https://www.mapbox.com/api-documentation/#maps).
-- [peterqliu](https://github.com/peterqliu) for informative 3D terrain-related articles and implementation.
-
 ## Demo
 
 ### 1) examples/geo-viewer ([live](https://w3reality.github.io/three-geo/examples/geo-viewer/io/index.html) | [source code](https://github.com/w3reality/three-geo/tree/master/examples/geo-viewer))
